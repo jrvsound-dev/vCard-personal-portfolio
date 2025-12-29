@@ -319,6 +319,46 @@ main {
   #SIDEBAR
 \*-----------------------------------*/
 
+/* Container */
+.languages-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Each item */
+.language-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image sizing */
+.language-item img {
+  width: 42px;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .language-item img {
+    width: 45px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .languages-container {
+    gap: 20px;
+  }
+
+  .language-item img {
+    width: 48px;
+  }
+}
+
 .sidebar {
   margin-bottom: 15px;
   max-height: 112px;
