@@ -1583,26 +1583,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .blog-content { padding: 25px; }
 
-  .video-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #000;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-
-
   /**
    * #CONTACT
    */
