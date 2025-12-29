@@ -323,7 +323,7 @@ main {
 .languages-container {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -355,7 +355,7 @@ main {
   }
 
   .language-item img {
-    width: 48px;
+    width: 55px;
   }
 }
 
