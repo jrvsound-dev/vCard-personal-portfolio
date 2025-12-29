@@ -967,7 +967,7 @@ main {
 
 .project-img img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
   transition: var(--transition-1);
 }
