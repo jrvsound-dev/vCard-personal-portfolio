@@ -908,6 +908,7 @@ main {
   #PORTFOLIO
 \*-----------------------------------*/
 
+
 .filter-list { display: none; }
 
 .filter-select-box {
@@ -984,7 +985,7 @@ main {
   100% { transform: scale(1); }
 }
 
-.project-item > a { width: 95%; } 
+.project-item > a { width: 95%;} 
 
 .project-img {
   position: relative;
@@ -1003,15 +1004,16 @@ main {
 .project-img::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: transparent;
   z-index: 1;
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before {
-  background: hsla(0, 0%, 0%, 0.5);
-}
+.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
 .project-item-icon-box {
   --scale: 0.8;
@@ -1063,6 +1065,7 @@ main {
   font-weight: var(--fw-300);
 }
 
+
 /* Timeline base */
 .timeline-text {
   font-size: 14px;
@@ -1073,19 +1076,21 @@ main {
 
 /* Award line base */
 .award-line {
-  --award-color: whitesmoke;
+  --award-color: whitesmoke;   /* color DEFAULT */
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 6px;
 }
 
+/* Icono */
 .award-line img {
   width: 21px;
   height: 21px;
   flex-shrink: 0;
 }
 
+/* Texto del premio */
 .award-line b {
   color: var(--award-color);
   font-weight: 600;
@@ -1093,43 +1098,14 @@ main {
   line-height: inherit;
 }
 
-.award-gold { --award-color: #f5c46b; }
-.award-smoke { --award-color: rgb(167, 167, 167); }
-
-/*-----------------------------------*\
-  #RESPONSIVE VIDEO (INSIDE PORTFOLIO)
-\*-----------------------------------*/
-
-/* Modern browsers */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  overflow: hidden;
+/* Variantes de color */
+.award-gold {
+  --award-color: #f5c46b;
 }
 
-.video-wrapper video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
+.award-smoke {
+  --award-color: rgb(167, 167, 167);
 }
-
-/* Fallback for older browsers */
-@supports not (aspect-ratio: 16 / 9) {
-  .video-wrapper {
-    padding-top: 56.25%;
-  }
-
-  .video-wrapper video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
 
 
 
