@@ -321,13 +321,13 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 224px;
+  max-height: 112px;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: 800px;
 }
 
 .sidebar-info {
