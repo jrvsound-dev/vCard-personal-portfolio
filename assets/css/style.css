@@ -322,17 +322,17 @@ main {
 .sidebar {
   margin-bottom: 15px;
   max-height: 112px;
+  
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: var(--transition-2);
 }
 
-.sidebar.active {
-  max-height: 410px;
-}
+.sidebar.active { max-height: 405px; }
 
 .sidebar-info {
   position: relative;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 15px;
 }
@@ -365,14 +365,14 @@ main {
   position: absolute;
   top: -15px;
   right: -15px;
-  padding: 10px;
+  border-radius: 0 15px;
   font-size: 13px;
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
-  border-radius: 0 15px;
+  padding: 10px;
   box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
   z-index: 1;
-  transition: background 0.3s ease;
 }
 
 .info_more-btn::before {
@@ -381,22 +381,22 @@ main {
   inset: 1px;
   border-radius: inherit;
   background: var(--bg-gradient-jet);
+  transition: var(--transition-1);
   z-index: -1;
 }
 
 .info_more-btn:hover,
-.info_more-btn:focus {
-  background: var(--bg-gradient-yellow-1);
-}
+.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
 
-.info_more-btn span {
-  display: none;
-}
+.info_more-btn:hover::before,
+.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+
+.info_more-btn span { display: none; }
 
 .sidebar-info_more {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+  transition: var(--transition-2);
 }
 
 .sidebar.active .sidebar-info_more {
@@ -411,12 +411,14 @@ main {
 }
 
 .contact-item {
+  min-width: 100%;
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .contact-info {
+  max-width: calc(100% - 50px);
   width: calc(100% - 50px);
 }
 
@@ -432,112 +434,65 @@ main {
   font-size: var(--fs-7);
 }
 
-.contact-info address {
-  font-style: normal;
-}
+.contact-info address { font-style: normal; }
 
 .social-list {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 15px;
+  padding-bottom: 4px;
   padding-left: 7px;
 }
 
 .social-item .social-link {
-  font-size: 18px;
   color: var(--light-gray-70);
+  font-size: 18px;
 }
 
-.social-item .social-link:hover {
-  color: var(--light-gray);
-}
+
+.social-item .social-link:hover { color: var(--light-gray); }
+
+
+
+
 
 /*-----------------------------------*\
-  #NAVBAR (MOBILE FIRST)
+  #NAVBAR
 \*-----------------------------------*/
 
 .navbar {
   position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 20px);
-
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background: hsla(240, 1%, 17%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
   z-index: 5;
-
-  transition: bottom 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 4px;
+  align-items: center;
   padding: 0 10px;
-
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.navbar-list::-webkit-scrollbar {
-  display: none;
 }
 
 .navbar-link {
   color: var(--light-gray);
   font-size: var(--fs-8);
-  padding: 20px 10px;
-  white-space: nowrap;
-  transition: color 0.3s ease;
+  padding: 20px 7px;
+  transition: color var(--transition-1);
 }
 
 .navbar-link:hover,
-.navbar-link:focus {
-  color: var(--light-gray-70);
-}
+.navbar-link:focus { color: var(--light-gray-70); }
 
-.navbar-link.active {
-  color: var(--orange-yellow-crayola);
-}
-
-/*-----------------------------------*\
-  #SIDEBAR ↔ NAVBAR SYNC (MOBILE)
-\*-----------------------------------*/
-
-.sidebar.active ~ .navbar {
-  bottom: 260px; /* adjust if sidebar height changes */
-}
-
-/*-----------------------------------*\
-  #DESKTOP LAYOUT
-\*-----------------------------------*/
-
-@media (min-width: 1000px) {
-  .navbar {
-    position: sticky;
-    top: 0;
-    bottom: auto;
-    left: 0;
-    transform: none;
-    width: 100%;
-    border-radius: 0 0 12px 12px;
-  }
-
-  .sidebar.active ~ .navbar {
-    bottom: auto;
-  }
-
-  .navbar-list {
-    justify-content: flex-start;
-  }
-}
-
+.navbar-link.active { color: var(--orange-yellow-crayola); }
 
 
 
