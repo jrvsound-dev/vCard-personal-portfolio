@@ -967,8 +967,8 @@ main {
 .video-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 14px;              /* same as content-card */
+  aspect-ratio: 18 / 11;
+  border-radius: 16px;              /* same as content-card */
   overflow: hidden;                /* 🔑 clips iframe */
   background: var(--eerie-black-1);
   box-shadow: var(--shadow-2);
@@ -986,7 +986,7 @@ main {
 
 
 /* Fallback for older browsers */
-@supports not (aspect-ratio: 16 / 9) {
+@supports not (aspect-ratio: 18 / 11) {
   .video-wrapper {
     padding-top: 56.25%;
   }
