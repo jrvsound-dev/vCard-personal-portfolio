@@ -908,6 +908,23 @@ main {
   #PORTFOLIO
 \*-----------------------------------*/
 
+.video-header {
+  margin-bottom: 12px;
+}
+
+.video-title {
+  color: var(--white-2);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-500);
+  line-height: 1.2;
+}
+
+.video-subtitle {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+}
+
 /* Video inside skills content card */
 .skill-video {
   list-style: none;
