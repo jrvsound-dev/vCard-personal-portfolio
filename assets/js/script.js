@@ -13,11 +13,11 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 let lastScrollY = window.scrollY;
+const COLLAPSE_SCROLL_Y = 180; // 🔥 delay collapse (increase if needed)
 
 // Button → ALWAYS EXPAND
 sidebarBtn.addEventListener("click", function (e) {
   e.stopPropagation();
-
   if (!sidebar) return;
 
   elementAdd(sidebar, "active");
@@ -31,13 +31,16 @@ window.addEventListener("scroll", function () {
 
   if (!isMobile || !sidebar) return;
 
-  // scroll down → collapse
-  if (currentScroll > lastScrollY && currentScroll > 60) {
+  // Collapse only AFTER threshold
+  if (
+    currentScroll > lastScrollY &&
+    currentScroll > COLLAPSE_SCROLL_Y
+  ) {
     elementRemove(sidebar, "active");
     elementAdd(sidebar, "is-collapsed");
   }
 
-  // scroll up → show compact header only
+  // Scroll up → show compact header
   if (currentScroll < lastScrollY) {
     elementRemove(sidebar, "is-collapsed");
   }
@@ -45,10 +48,9 @@ window.addEventListener("scroll", function () {
   lastScrollY = currentScroll;
 });
 
-// Optional: collapse when clicking outside (mobile UX)
+// Optional: collapse when clicking outside
 document.addEventListener("click", function (e) {
   const isMobile = window.innerWidth < 768;
-
   if (!isMobile || !sidebar) return;
 
   if (!sidebar.contains(e.target) && !sidebarBtn.contains(e.target)) {
