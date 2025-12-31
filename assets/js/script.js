@@ -14,6 +14,32 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
+// ------------------------------------
+// AUTO COLLAPSE SIDEBAR ON SCROLL (MOBILE)
+// ------------------------------------
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", function () {
+  const currentScroll = window.scrollY;
+  const isMobile = window.innerWidth < 768;
+
+  if (!isMobile || !sidebar) return;
+
+  // scrolling down → collapse
+  if (currentScroll > lastScrollY && currentScroll > 60) {
+    sidebar.classList.add("is-collapsed");
+    sidebar.classList.remove("active");
+  }
+  // scrolling up → expand
+  else {
+    sidebar.classList.remove("is-collapsed");
+  }
+
+  lastScrollY = currentScroll;
+});
+
+
 
 
 // testimonials variables
