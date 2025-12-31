@@ -1437,7 +1437,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* Safari-style tall preview */
   .project-img {
-    aspect-ratio: 10 / 16;
+    aspect-ratio: 9 / 16;
     margin-bottom: 0;
   }
 
