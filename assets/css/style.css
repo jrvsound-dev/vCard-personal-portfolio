@@ -1486,7 +1486,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .service-item-text {
     margin-top: 0;
-    margin-bottom: 4px;    /* space before next card */
+    margin-bottom: 8px;    /* space before next card */
   }
 
 
