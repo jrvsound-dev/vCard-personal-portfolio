@@ -13,13 +13,17 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 let lastScrollY = window.scrollY;
-const COLLAPSE_SCROLL_Y = 400; // 🔥 delay collapse (increase if needed)
+let collapseTimer = null;
+
+const COLLAPSE_SCROLL_Y = 180;   // scroll distance before eligible
+const COLLAPSE_DELAY = 450;      // 🔥 slower collapse (ms)
 
 // Button → ALWAYS EXPAND
 sidebarBtn.addEventListener("click", function (e) {
   e.stopPropagation();
   if (!sidebar) return;
 
+  clearTimeout(collapseTimer);
   elementAdd(sidebar, "active");
   elementRemove(sidebar, "is-collapsed");
 });
@@ -31,17 +35,24 @@ window.addEventListener("scroll", function () {
 
   if (!isMobile || !sidebar) return;
 
-  // Collapse only AFTER threshold
+  // scrolling DOWN
   if (
     currentScroll > lastScrollY &&
     currentScroll > COLLAPSE_SCROLL_Y
   ) {
-    elementRemove(sidebar, "active");
-    elementAdd(sidebar, "is-collapsed");
+    if (!collapseTimer) {
+      collapseTimer = setTimeout(() => {
+        elementRemove(sidebar, "active");
+        elementAdd(sidebar, "is-collapsed");
+        collapseTimer = null;
+      }, COLLAPSE_DELAY);
+    }
   }
 
-  // Scroll up → show compact header
+  // scrolling UP → cancel collapse & show compact header
   if (currentScroll < lastScrollY) {
+    clearTimeout(collapseTimer);
+    collapseTimer = null;
     elementRemove(sidebar, "is-collapsed");
   }
 
@@ -80,8 +91,10 @@ for (let i = 0; i < testimonialsItem.length; i++) {
   testimonialsItem[i].addEventListener("click", function () {
     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+    modalTitle.innerHTML =
+      this.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML =
+      this.querySelector("[data-testimonials-text]").innerHTML;
     testimonialsModalFunc();
   });
 }
