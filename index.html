@@ -657,12 +657,18 @@
               <li class="video-wrapper">
                 <div class="video-wrapper">
                   <iframe
-                    src="https://player.vimeo.com/video/465120432?autoplay=0"
-                    title="PRODUCTION SOUND REEL - Jorge Rendon"
+                    id="vimeoPlayer"
+                    src="https://player.vimeo.com/video/465120432?playsinline=0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen
                   ></iframe>
+                
+                  <!-- Custom Play Button -->
+                  <button class="video-play-btn" aria-label="Play video">
+                    ▶
+                  </button>
                 </div>
+                
                 
               </li>
             
@@ -2230,8 +2236,11 @@
 
 
 
-  <!-- Main JS -->
-  <script src="./assets/js/script.js"></script>
+    <!-- Vimeo Player API -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <!-- Main JS -->
+    <script src="./assets/js/script.js"></script>
 
   <!--
     - ionicon link
