@@ -1201,7 +1201,7 @@ main {
 @media (max-width: 767px) {
   .project-img {
     height: auto;                 /* remove fixed height */
-    aspect-ratio: 6 / 10;         /* responsive ratio */
+    aspect-ratio: 4 / 8;         /* responsive ratio */
   }
 
   .project-img img {
