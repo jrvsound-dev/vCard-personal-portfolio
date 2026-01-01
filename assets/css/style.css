@@ -1528,11 +1528,44 @@ textarea.form-input::-webkit-resizer { display: none; }
     object-fit: cover;
   }
 
-  
-
-
 
 }
+
+/* ================================
+   PORTFOLIO — MOBILE TEXT ALIGNMENT
+   ALIGN WITH IMAGE ONLY
+   NO STYLE CHANGES
+================================ */
+@media (max-width: 767px) {
+
+  /* Remove desktop offset */
+  .project-title,
+  .project-category {
+    margin-left: 0;
+  }
+
+  /* Align text with card padding */
+  .project-item > a {
+    padding-bottom: 10px; /* breathing room */
+  }
+
+  .project-title,
+  .project-category {
+    padding-inline: 12px; /* matches image edge visually */
+  }
+
+  /* Tighten vertical rhythm */
+  .project-title {
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+
+  .project-category {
+    margin-bottom: 6px;
+  }
+
+}
+
 
 
 
