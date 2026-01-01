@@ -1249,6 +1249,36 @@ main {
   }
 }
 
+/* ================================
+   MOBILE: SERVICE ITEM ALIGNMENT FIX
+   ALIGN ICONS + TITLES + TEXT
+================================ */
+@media (max-width: 767px) {
+
+  /* Ensure service card content lines up */
+  .service-item {
+    padding: 20px 18px; /* even horizontal rhythm */
+  }
+
+  /* Icon alignment */
+  .service-icon-box {
+    margin-inline: auto;
+  }
+
+  /* Title alignment */
+  .service-item-title {
+    margin-top: 8px;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  /* 🔧 TEXT FIX (your target) */
+  .service-item-text {
+    padding-inline: 6px;   /* aligns with icon + title */
+    text-align: center;   /* matches mobile card flow */
+  }
+
+}
 
 
 
@@ -1498,36 +1528,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     object-fit: cover;
   }
 
-  /* ================================
-   MOBILE: SERVICE ITEM ALIGNMENT FIX
-   ALIGN ICONS + TITLES + TEXT
-================================ */
-@media (max-width: 767px) {
-
-  /* Ensure service card content lines up */
-  .service-item {
-    padding: 20px 18px; /* even horizontal rhythm */
-  }
-
-  /* Icon alignment */
-  .service-icon-box {
-    margin-inline: auto;
-  }
-
-  /* Title alignment */
-  .service-item-title {
-    margin-top: 8px;
-    margin-bottom: 6px;
-    text-align: center;
-  }
-
-  /* 🔧 TEXT FIX (your target) */
-  .service-item-text {
-    padding-inline: 6px;   /* aligns with icon + title */
-    text-align: center;   /* matches mobile card flow */
-  }
-
-}
+  
 
 
 
