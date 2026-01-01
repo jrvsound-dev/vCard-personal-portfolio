@@ -494,6 +494,43 @@ main {
   }
 }
 
+/* ================================
+   SIDEBAR MOBILE ALIGNMENT FIX
+   ICON + TITLE + TEXT ALIGNED
+================================ */
+@media (max-width: 767px) {
+
+  /* Ensure consistent horizontal rhythm */
+  .contact-item {
+    align-items: flex-start;
+    gap: 14px; /* tighter + visually aligned */
+  }
+
+  /* Lock icon box position */
+  .contact-item .icon-box {
+    margin-top: 2px; /* aligns with text baseline */
+  }
+
+  /* Text container alignment */
+  .contact-info {
+    padding-right: 0;      /* remove offset */
+    padding-top: 1px;      /* fine vertical alignment */
+  }
+
+  /* Title + text share same left edge */
+  .contact-title,
+  .contact-info :is(.contact-link, time, address) {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  /* Social icons align with text column */
+  .social-list {
+    padding-left: 0;
+    gap: 14px;
+  }
+
+}
 
 
 
